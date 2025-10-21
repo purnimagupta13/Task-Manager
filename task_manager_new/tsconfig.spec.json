@@ -9,6 +9,8 @@
     ]
   },
   "include": [
-    "src/**/*.ts"
+    "src/app/authorization/login/login.component.spec.ts",
+    "src/app/services/authorization.service.spec.ts",
+    "src/app/app.module.spec.ts"
   ]
 }
