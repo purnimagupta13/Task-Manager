@@ -1,0 +1,17 @@
+<div class="card mt-4 p-4 shadow-sm" *ngIf="task">
+  <h3 class="mb-3">Task View</h3>
+
+  <div class="border rounded p-3 mb-3">
+    <h5 class="mb-2">{{ task.title }}</h5>
+    <p class="mb-1"><strong>Description:</strong> {{ task.description }}</p>
+    <p class="mb-1"><strong>Due Date:</strong> {{ task.dueDate | date }}</p>
+    <p class="mb-1"><strong>Priority:</strong> {{ task.priority }}</p>
+    <p class="mb-0"><strong>Created At:</strong> {{ task.createdAt | date:'short' }}</p>
+  </div>
+
+  <div class="d-flex gap-2">
+    <button class="btn custom-btn" (click)="onEdit()">Edit</button>
+    <button class="btn btn-danger" (click)="onDelete()">Delete</button>
+    <a class="btn custom-btn ms-auto" routerLink="/tasks">Back to List</a>
+  </div>
+</div>

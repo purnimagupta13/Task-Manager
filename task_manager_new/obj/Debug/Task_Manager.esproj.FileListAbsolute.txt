@@ -1,0 +1,1 @@
+C:\Angularproject\Task_Manager\obj\Debug\Task_Manager.esproj.CoreCompileInputs.cache

@@ -1,0 +1,54 @@
+<form (ngSubmit)="saveProfile()" #profileForm="ngForm">
+  <div class="row">
+    <div class="col-md-6 mb-3">
+      <label>First Name</label>
+      <input type="text"
+             class="form-control"
+             [(ngModel)]="userData.firstName"
+             name="firstName"
+             required />
+    </div>
+    <div class="col-md-6 mb-3">
+      <label>Last Name</label>
+      <input type="text"
+             class="form-control"
+             [(ngModel)]="userData.lastName"
+             name="lastName"
+             required />
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label>Email</label>
+    <input class="form-control"
+           [(ngModel)]="userData.email"
+           name="email"
+           readonly />
+  </div>
+
+  <div class="mb-3">
+    <label>Phone</label>
+    <input class="form-control"
+           [(ngModel)]="userData.phone"
+           name="phone"
+           pattern="^[0-9]{10}$" />
+  </div>
+
+  <div class="mb-3">
+    <label>Address</label>
+    <textarea class="form-control"
+              [(ngModel)]="userData.address"
+              name="address"></textarea>
+  </div>
+
+  <div *ngIf="message" class="alert" [ngClass]="isError ? 'alert-danger' : 'alert-success'">
+    {{ message }}
+  </div>
+
+  <div class="d-flex gap-2">
+    <button type="submit" class="btn custom-btn" [disabled]="!profileForm.form.valid">
+      Save
+    </button>
+    <button type="button" class="btn btn-secondary" (click)="resetForm()">Reset</button>
+  </div>
+</form>

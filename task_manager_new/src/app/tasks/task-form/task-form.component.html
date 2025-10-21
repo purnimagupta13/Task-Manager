@@ -1,0 +1,35 @@
+<div class="card col-md-6 mx-auto mt-5 p-4 shadow-sm">
+  <h3 class="text-center mb-3">{{editMode ? 'Edit Task' : 'Add New Task'}}</h3>
+  <form (ngSubmit)="saveTask()" #taskForm="ngForm">
+    <div class="mb-3">
+      <label>Task Title</label>
+      <input type="text" class="form-control" [(ngModel)]="task.title" name="title" required>
+    </div>
+
+    <div class="mb-3">
+      <label>Description</label>
+      <textarea class="form-control" [(ngModel)]="task.description" name="description" rows="3"></textarea>
+    </div>
+
+    <div class="mb-3">
+      <label>Due Date</label>
+      <input type="date" class="form-control" [(ngModel)]="task.dueDate" name="dueDate" required>
+    </div>
+
+    <div class="mb-3">
+      <label>Priority</label>
+      <select class="form-select"
+              [(ngModel)]="task.priority"
+              name="priority"
+              required>
+        <option *ngFor="let p of priorityOptions" [ngValue]="p">{{ p }}</option>
+      </select>
+    </div>
+
+    <div class="text-center">
+      <button type="submit" class="btn custom-btn w-100" [disabled]="!taskForm.form.valid">
+        {{editMode ? 'Update Task' : 'Create Task'}}
+      </button>
+    </div>
+  </form>
+</div>

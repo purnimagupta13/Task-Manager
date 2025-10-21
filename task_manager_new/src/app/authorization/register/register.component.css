@@ -1,0 +1,8 @@
+body {
+}
+
+.custom-btn {
+  background-color: deeppink !important;
+  color: black !important;
+  border: none;
+}
