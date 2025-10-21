@@ -15,7 +15,7 @@ describe('AuthorizationService', () => {
   });
 
   it('should login admin with correct credentials', () => {
-    const result = service.login('Kartik@angular.com', 'Kartik@123');
+    const result = service.login('Purnima@angular.com', 'Purnima@123');
     expect(result).toBeTrue();
   });
 });
